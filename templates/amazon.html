@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Results for {{ query }}</title>
+</head>
+<body>
+    <h1>Amazon Results for "{{ query }}"</h1>
+    <ul>
+        {% for product in amazon_data %}
+            <li><a href="{{ product.link }}">{{ product.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

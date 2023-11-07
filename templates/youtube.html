@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Results for {{ query }}</title>
+</head>
+<body>
+    <h1>YouTube Results for "{{ query }}"</h1>
+    <ul>
+        {% for video in youtube_data %}
+            <li><a href="{{ video.link }}">{{ video.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
