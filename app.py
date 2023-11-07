@@ -43,14 +43,16 @@ def index():
 def youtube():
     if request.method == 'POST':
         query = request.form['query']
-        return redirect(f'/youtube/{query}')
+        youtube_data = scrape_youtube(query)
+        return render_template('youtube.html', query=query, youtube_data=youtube_data)
     return render_template('youtube.html')
 
 @app.route('/amazon', methods=['GET', 'POST'])
 def amazon():
     if request.method == 'POST':
         query = request.form['query']
-        return redirect(f'/amazon/{query}')
+        amazon_data = scrape_amazon(query)  # Call the scraping function
+        return render_template('amazon.html', query=query, amazon_data=amazon_data)
     return render_template('amazon.html')
 
 
