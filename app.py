@@ -10,6 +10,7 @@ def scrape_youtube(query):
 
     url = f'https://www.youtube.com/results?search_query={query}'
     response = requests.get(url)
+    
     soup = BeautifulSoup(response.text, 'html.parser')
 
     for item in soup.select('.yt-lockup-video'):
